@@ -19,7 +19,7 @@ func GetAPIKey(headers http.Header) (string, error) {
 	// Use Fields instead of Split to handle multiple spaces safely
 	parts := strings.Fields(authHeader)
 	if len(parts) != 2 || parts[0] != "ApiKey" || parts[1] == "" {
-		return "", errors.New(" authorization header")
+		return "", errors.New("malformed authorization header")
 	}
 
 	return parts[1], nil
