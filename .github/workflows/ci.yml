@@ -34,3 +34,4 @@ jobs:
           go-version: "1.25.1"
       - name: Check code style
         run: test -z $(go fmt ./...)
+        
